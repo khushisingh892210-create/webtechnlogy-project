@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Movie Dashboard</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#1e272e;
+color:white;
+padding:30px;
+}
+
+h1{
+text-align:center;
+margin-bottom:20px;
+}
+
+/* summary cards */
+
+.summary{
+display:flex;
+gap:15px;
+margin-bottom:20px;
+flex-wrap:wrap;
+}
+
+.card{
+flex:1;
+min-width:150px;
+background:#485460;
+padding:15px;
+border-radius:10px;
+text-align:center;
+}
+
+.controls{
+margin-bottom:15px;
+}
+
+.controls input,
+.controls select,
+.controls button{
+padding:8px;
+margin-right:6px;
+border-radius:5px;
+border:none;
+}
+
+button{
+background:#ff3f34;
+color:white;
+cursor:pointer;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:#2f3640;
+}
+
+th{
+background:#ff3f34;
+padding:10px;
+}
+
+td{
+padding:10px;
+text-align:center;
+border-bottom:1px solid #444;
+}
+
+tr:hover{
+background:#3d3d3d;
+}
+
+.rating{
+color:#ffd32a;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🎬 Movie Collection Dashboard</h1>
+
+<div class="summary">
+
+<div class="card">
+<h2 id="totalMovies">0</h2>
+<p>Total Movies</p>
+</div>
+
+<div class="card">
+<h2 id="avgRating">0</h2>
+<p>Average Rating</p>
+</div>
+
+<div class="card">
+<h2 id="latestMovie">0</h2>
+<p>Latest Year</p>
+</div>
+
+</div>
+
+
+<div class="controls">
+
+<input type="text" id="search" placeholder="Search movie..." oninput="render()">
+
+<select id="genre" onchange="render()">
+<option value="All">All Genre</option>
+<option value="Action">Action</option>
+<option value="Sci-Fi">Sci-Fi</option>
+<option value="Drama">Drama</option>
+<option value="Comedy">Comedy</option>
+</select>
+
+<button onclick="sortRating()">Sort Rating</button>
+<button onclick="sortYear()">Sort Year</button>
+
+</div>
+
+
+<table>
+
+<thead>
+<tr>
+<th>ID</th>
+<th>Movie</th>
+<th>Genre</th>
+<th>Year</th>
+<th>Rating</th>
+<th>Director</th>
+</tr>
+</thead>
+
+<tbody id="tableBody"></tbody>
+
+</table>
+
+
+<script>
+
+let movies=[
+
+{id:1,name:"Avengers Endgame",genre:"Action",year:2019,rating:4.8,director:"Russo"},
+
+{id:2,name:"Interstellar",genre:"Sci-Fi",year:2014,rating:4.9,director:"Nolan"},
+
+{id:3,name:"Joker",genre:"Drama",year:2019,rating:4.6,director:"Todd Phillips"},
+
+{id:4,name:"The Mask",genre:"Comedy",year:1994,rating:4.3,director:"Chuck Russell"},
+
+{id:5,name:"Batman",genre:"Action",year:2022,rating:4.5,director:"Matt Reeves"}
+
+]
+
+let ratingAsc=false
+let yearAsc=false
+
+
+function updateSummary(data){
+
+document.getElementById("totalMovies").innerText=data.length
+
+let avg=(data.reduce((sum,m)=>sum+m.rating,0)/data.length).toFixed(1)
+
+document.getElementById("avgRating").innerText=avg
+
+let latest=Math.max(...data.map(m=>m.year))
+
+document.getElementById("latestMovie").innerText=latest
+
+}
+
+
+function sortRating(){
+
+movies.sort((a,b)=>ratingAsc ? a.rating-b.rating : b.rating-a.rating)
+
+ratingAsc=!ratingAsc
+
+render()
+
+}
+
+function sortYear(){
+
+movies.sort((a,b)=>yearAsc ? a.year-b.year : b.year-a.year)
+
+yearAsc=!yearAsc
+
+render()
+
+}
+
+
+function render(){
+
+let search=document.getElementById("search").value.toLowerCase()
+
+let genre=document.getElementById("genre").value
+
+let filtered=movies.filter(m=>{
+
+let name=m.name.toLowerCase().includes(search)
+
+let gen=genre==="All" || m.genre===genre
+
+return name && gen
+
+})
+
+updateSummary(filtered)
+
+let tbody=document.getElementById("tableBody")
+
+tbody.innerHTML=filtered.map(m=>`
+
+<tr>
+
+<td>${m.id}</td>
+
+<td>${m.name}</td>
+
+<td>${m.genre}</td>
+
+<td>${m.year}</td>
+
+<td class="rating">⭐ ${m.rating}</td>
+
+<td>${m.director}</td>
+
+</tr>
+
+`).join('')
+
+}
+
+render()
+
+</script>
+
+</body>
+</html>
