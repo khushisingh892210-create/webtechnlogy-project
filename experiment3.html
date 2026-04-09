@@ -1,58 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Teacher Portfolio</title>
-    <link rel="stylesheet" href="experiment3style.css">
+    <meta charset="UTF-8">
+    <title>My Simple Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="experiment4style.css">
 </head>
 <body>
 
     <header>
-        <h1>Mrs. Ankita singh</h1>
-        <p>Mathematics Teacher</p>
+        <div class="container header-inner">
+            <h1 class="logo">MyWebsite</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I am a dedicated Mathematics teacher with 8 years of teaching experience.
-            I focus on building strong conceptual understanding among students.
-        </p>
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <span class="eyebrow">Creative Solutions</span>
+            <h2>Build a modern website that stands out</h2>
+            <p>Professional design, responsive layout, and clean code for your next web project.</p>
+            <a href="#services" class="btn">Explore Services</a>
+        </div>
     </section>
 
-    <section id="education">
-        <h2>Education</h2>
-        <ul>
-            <li>M.Sc in Mathematics</li>
-            <li>B.Ed</li>
-            <li>B.Sc in Mathematics</li>
-        </ul>
+    <section id="about" class="section light">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We design elegant digital experiences for businesses and individuals. Our focus is on responsive websites, modern aesthetics, and intuitive user journeys that convert visitors into customers.</p>
+        </div>
     </section>
 
-    <section id="experience">
-        <h2>Teaching Experience</h2>
-        <ul>
-            <li>8 Years at ABC School</li>
-            <li>2 Years at XYZ Academy</li>
-        </ul>
+    <section id="services" class="section">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Web Design</h3>
+                    <p>Custom layouts, modern UI, and accessible design tailored to your brand.</p>
+                </div>
+                <div class="card">
+                    <h3>Responsive Development</h3>
+                    <p>Sites that look great on desktop, tablet, and mobile with fast performance.</p>
+                </div>
+                <div class="card">
+                    <h3>SEO Friendly</h3>
+                    <p>Clean structure, semantic HTML, and best practices to help search engines discover your site.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: anjali@email.com</p>
-        <p>Phone: +91-9876543210</p>
+    <section id="features" class="section light">
+        <div class="container">
+            <h2>Why Choose Us</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Fast Delivery</h3>
+                    <p>Quick turnaround without compromising quality or responsiveness.</p>
+                </div>
+                <div class="card">
+                    <h3>Modern Approach</h3>
+                    <p>Contemporary styles and clean interactions for a polished web presence.</p>
+                </div>
+                <div class="card">
+                    <h3>Trusted Support</h3>
+                    <p>Friendly assistance and ongoing updates to keep your site current.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Ready to launch your website? Share your details and we'll get back to you soon.</p>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <textarea name="message" rows="5" placeholder="Tell us about your project" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
     </section>
 
     <footer>
-        <p>Copyright © 2026 Mrs. Ankita Singh. All rights reserved.</p>
+        <p>© 2026 MyWebsite. Crafted with care.</p>
     </footer>
 
+</body>
+</html>
+
+
+        
+        
+    
 
 
    
