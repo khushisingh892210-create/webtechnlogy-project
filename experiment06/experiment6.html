@@ -1,0 +1,156 @@
+
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-box {
+            margin-bottom: 15px;
+        }
+
+        .input-box label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .input-box input,
+        .input-box select,
+        .input-box textarea {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        .gender-box {
+            margin-bottom: 15px;
+        }
+
+        .gender-box label {
+            font-weight: bold;
+        }
+
+        .gender-options {
+            margin-top: 5px;
+        }
+
+        .gender-options input {
+            margin-right: 5px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background: #4facfe;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #00c6ff;
+        }
+
+        @media (max-width: 450px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Registration Form</h2>
+
+    <form>
+        <div class="input-box">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your name" required>
+        </div>
+
+        <div class="input-box">
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="input-box">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="Enter phone number" required>
+        </div>
+
+        <div class="input-box">
+            <label>Password</label>
+            <input type="password" placeholder="Enter password" required>
+        </div>
+
+        <div class="input-box">
+            <label>Date of Birth</label>
+            <input type="date" required>
+        </div>
+
+        <div class="gender-box">
+            <label>Gender</label>
+            <div class="gender-options">
+                <input type="radio" name="gender"> Male
+                <input type="radio" name="gender"> Female
+                <input type="radio" name="gender"> Other
+            </div>
+        </div>
+
+        <div class="input-box">
+            <label>Course</label>
+            <select required>
+                <option value="">Select Course</option>
+                <option>Web Development</option>
+                <option>Data Science</option>
+                <option>Graphic Design</option>
+                <option>Digital Marketing</option>
+            </select>
+        </div>
+
+        <div class="input-box">
+            <label>Address</label>
+            <textarea rows="3" placeholder="Enter your address"></textarea>
+        </div>
+
+        <div class="input-box">
+            <label>Upload Profile Picture</label>
+            <input type="file">
+        </div>
+
+        <button type="submit" class="btn">Register</button>
+    </form>
+</div>
+
+</body>
+</html>   

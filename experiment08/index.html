@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 08 - PHP Learning Exercises Screenshots</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+
+        .exercises-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .exercise-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .exercise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .exercise-header {
+            background: #667eea;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .exercise-header h2 {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .exercise-header p {
+            font-size: 0.95em;
+            opacity: 0.95;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #999;
+            font-size: 1.1em;
+            border: 3px dashed #ccc;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-placeholder:hover {
+            background: #e8e8e8;
+            border-color: #667eea;
+            color: #667eea;
+        }
+
+        .image-container {
+            width: 100%;
+            height: auto;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .exercise-footer {
+            padding: 15px;
+            background: #f9f9f9;
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .instructions {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .instructions h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        .instructions li {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .instructions code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .exercises-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🐘 Experiment 08 - PHP Learning Exercises</h1>
+    <p class="subtitle">Screenshots of Exercise Outputs</p>
+
+    
+
+    <div class="exercises-grid">
+        <!-- Exercise 3: Profile -->
+        <div class="exercise-card">
+            <div class="exercise-header">
+                <h2>Exercise 3</h2>
+                <p>Profile & Variables</p>
+            </div>
+            <div class="image-container">
+                <img src="images/myProfile.png" alt="My Profile Screenshot - Variables and var_dump">
+            </div>
+            <div class="exercise-footer">
+                Variables • var_dump() • Arrays
+            </div>
+        </div>
+
+        <!-- Exercise 3: Constants -->
+        <div class="exercise-card">
+            <div class="exercise-header">
+                <h2>Exercise 3</h2>
+                <p>Constants</p>
+            </div>
+            <div class="image-container">
+                <img src="images/constant.png" alt="Constants Screenshot - PHP Constants">
+            </div>
+            <div class="exercise-footer">
+                Custom Constants • PHP Constants
+            </div>
+        </div>
+
+        <!-- Exercise 3: Data Types -->
+        <div class="exercise-card">
+            <div class="exercise-header">
+                <h2>Exercise 3</h2>
+                <p>Data Types</p>
+            </div>
+            <div class="image-container">
+                <img src="images/phpDataType.png" alt="PHP Data Types Screenshot">
+            </div>
+            <div class="exercise-footer">
+                String • Integer • Float • Boolean • Null • Array
+            </div>
+        </div>
+
+        <!-- Challenge: System Info -->
+        <div class="exercise-card">
+            <div class="exercise-header">
+                <h2>Challenge</h2>
+                <p>System Information</p>
+            </div>
+            <div class="image-container">
+                <img src="images/systemInfo.png" alt="System Info Screenshot">
+            </div>
+            <div class="exercise-footer">
+                PHP Info • Server Info • Foreach Loop
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>✅ Experiment 08 Complete!</p>
+        <p style="font-size: 0.9em; margin-top: 10px;">All screenshots added and saved locally in your browser</p>
+    </div>
+</div>
+
+
+
+</body>
+</html>
